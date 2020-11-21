@@ -1,9 +1,9 @@
-package com.codecagon.hr.services.interfaces
+package com.codecagon.hr.managers.interfaces
 
 import com.codecagon.hr.models.SalaryAssignment
 import java.util.*
 
-interface SalaryAssignmentService {
+interface SalaryAssignmentManager {
     fun getAllByPerson(personId: UUID): List<SalaryAssignment>
     fun addAssignment(personId: UUID, assignment: SalaryAssignment): SalaryAssignment
     fun deleteAssignment(personId: UUID, assignmentId: UUID)

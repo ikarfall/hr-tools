@@ -7,7 +7,7 @@ import java.util.*
 
 @Component
 class ProjectAssignmentServiceImpl : ProjectAssignmentService {
-    override fun getAllByPerson(id: UUID): List<ProjectAssignment> {
+    override fun getAllByPerson(personId: UUID): List<ProjectAssignment> {
         TODO("Not yet implemented")
     }
 

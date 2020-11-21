@@ -2,14 +2,12 @@ package com.codecagon.hr.services
 
 import com.codecagon.hr.models.Project
 import com.codecagon.hr.services.interfaces.ProjectService
-import org.springframework.data.domain.Page
-import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Component
 import java.util.*
 
 @Component
 class ProjectServiceImpl : ProjectService {
-    override fun getAll(pageable: Pageable): Page<Project> {
+    override fun getAll(): List<Project> {
         TODO("Not yet implemented")
     }
 

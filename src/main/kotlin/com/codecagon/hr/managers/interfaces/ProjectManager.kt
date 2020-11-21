@@ -1,10 +1,9 @@
-package com.codecagon.hr.services.interfaces
+package com.codecagon.hr.managers.interfaces
 
 import com.codecagon.hr.models.Project
 import java.util.*
 
-
-interface ProjectService {
+interface ProjectManager {
     fun getAll(): List<Project>
     fun getById(id: UUID): Optional<Project>
     fun insert(project: Project): Project
