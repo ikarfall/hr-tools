@@ -5,6 +5,7 @@ plugins {
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
     kotlin("jvm") version "1.4.10"
     kotlin("plugin.spring") version "1.4.10"
+    kotlin("kapt") version "1.3.61"
 }
 
 group = "com.codecagon"
@@ -31,6 +32,9 @@ dependencies {
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo")
+
+    implementation("org.mapstruct:mapstruct:1.4.1.Final")
+    kapt("org.mapstruct:mapstruct-processor:1.4.1.Final")
 }
 
 tasks.withType<Test> {
