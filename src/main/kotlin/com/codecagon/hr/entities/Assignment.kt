@@ -1,8 +1,9 @@
 package com.codecagon.hr.entities
 
+import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
 import java.time.ZonedDateTime
+import java.util.*
 
-open class Assignment(start: ZonedDateTime, end:ZonedDateTime){
-
-
-}
+@Document
+open class Assignment(@Id var id: UUID, personId: UUID, start: ZonedDateTime, end: ZonedDateTime)

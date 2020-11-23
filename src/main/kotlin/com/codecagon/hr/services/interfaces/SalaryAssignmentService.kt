@@ -7,5 +7,5 @@ interface SalaryAssignmentService {
     fun getAllByPerson(personId: UUID): List<SalaryAssignment>
     fun addAssignment(personId: UUID, assignment: SalaryAssignment): SalaryAssignment
     fun deleteAssignment(personId: UUID, assignmentId: UUID)
-    fun editAssignment(personId: UUID, assignment: SalaryAssignment)
+    fun editAssignment(personId: UUID, assignment: SalaryAssignment): SalaryAssignment
 }

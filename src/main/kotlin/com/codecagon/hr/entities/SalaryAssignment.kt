@@ -1,13 +1,12 @@
 package com.codecagon.hr.entities
 
 import java.time.ZonedDateTime
+import java.util.*
 
 class SalaryAssignment(
+        id: UUID,
         start: ZonedDateTime,
         end: ZonedDateTime,
-        paymentType: PaymentType) : Assignment(start, end) {
-}
+        paymentType: PaymentType,
+        var personId: UUID) : Assignment(id, personId, start, end)
 
-enum class PaymentType {
-    Annually, Monthly, Hourly
-}

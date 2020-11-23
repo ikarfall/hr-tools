@@ -15,18 +15,21 @@ class ProjectAssignmentController(@Autowired val projectAssignmentService: Proje
                                   @Autowired var projectAssignmentMapper: ProjectAssignmentMapper) {
 
     @GetMapping
-    fun getAllByPerson(@PathVariable id: UUID): List<ProjectAssignmentResponse>
-            = projectAssignmentService.getAllByPerson(id) then (projectAssignmentMapper::toResponse)
+    fun getAllByPerson(@PathVariable id: UUID): List<ProjectAssignmentResponse> = projectAssignmentService.getAllByPerson(id) then (projectAssignmentMapper::toResponse)
 
     @PostMapping
-    fun addAssignment(@PathVariable id: UUID, assignment: ProjectAssignmentRequest)
-        = assignment
+    fun addAssignment(@PathVariable id: UUID, assignment: ProjectAssignmentRequest) = assignment
             .let(projectAssignmentMapper::fromRequest)
             .let { projectAssignmentService.addAssignment(id, it) }
-            .let( projectAssignmentMapper::toResponse )
+            .let(projectAssignmentMapper::toResponse)
+
+    @PutMapping
+    fun editAssignment(@PathVariable id: UUID, assignment: ProjectAssignmentRequest) = assignment
+            .let(projectAssignmentMapper::fromRequest)
+            .let { projectAssignmentService.editAssignment(id, it) }
+            .let(projectAssignmentMapper::toResponse)
 
     @DeleteMapping
-    fun deleteAssignment(@PathVariable id: UUID, assignmentId: UUID)
-            = projectAssignmentService.deleteAssignment(id, assignmentId)
+    fun deleteAssignment(@PathVariable id: UUID, assignmentId: UUID) = projectAssignmentService.deleteAssignment(id, assignmentId)
 
 }

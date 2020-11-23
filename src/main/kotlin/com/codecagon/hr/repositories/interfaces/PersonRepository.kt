@@ -5,6 +5,4 @@ import org.springframework.data.mongodb.repository.MongoRepository
 import java.util.*
 
 
-interface PersonRepository: MongoRepository<Person, UUID> {
-
-}
+interface PersonRepository : MongoRepository<Person, UUID>
