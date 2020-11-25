@@ -2,9 +2,9 @@ package com.codecagon.hr.managers
 
 import com.codecagon.hr.managers.interfaces.PersonManager
 import com.codecagon.hr.models.Person
-import com.codecagon.hr.models.mappers.PersonMapper
-import com.codecagon.hr.models.mappers.ProjectAssignmentMapper
-import com.codecagon.hr.models.mappers.SalaryAssignmentMapper
+import com.codecagon.hr.models.mappers.PersonMapperDto
+import com.codecagon.hr.models.mappers.ProjectAssignmentMapperDto
+import com.codecagon.hr.models.mappers.SalaryAssignmentMapperDto
 import com.codecagon.hr.repositories.interfaces.PersonRepository
 import com.codecagon.hr.repositories.interfaces.ProjectAssignmentRepository
 import com.codecagon.hr.repositories.interfaces.SalaryAssignmentRepository
@@ -13,11 +13,11 @@ import java.util.*
 
 class PersonManagerImpl(
         @Autowired var personRepository: PersonRepository,
-        @Autowired var personMapper: PersonMapper,
+        @Autowired var personMapper: PersonMapperDto,
         @Autowired var projectAssignmentRepository: ProjectAssignmentRepository,
-        @Autowired var projectAssignmentMapper: ProjectAssignmentMapper,
+        @Autowired var projectAssignmentMapper: ProjectAssignmentMapperDto,
         @Autowired var salaryAssignmentRepository: SalaryAssignmentRepository,
-        @Autowired var salaryAssignmentMapper: SalaryAssignmentMapper
+        @Autowired var salaryAssignmentMapper: SalaryAssignmentMapperDto
 ) : PersonManager {
     override fun getAll(): List<Person> = personRepository.findAll().map {
         val projectAssignments = projectAssignmentRepository.findByPersonId(it.id)

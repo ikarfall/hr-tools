@@ -2,14 +2,14 @@ package com.codecagon.hr.managers
 
 import com.codecagon.hr.managers.interfaces.ProjectAssignmentManager
 import com.codecagon.hr.models.ProjectAssignment
-import com.codecagon.hr.models.mappers.ProjectAssignmentMapper
+import com.codecagon.hr.models.mappers.ProjectAssignmentMapperDto
 import com.codecagon.hr.repositories.interfaces.ProjectAssignmentRepository
 import com.codecagon.hr.then
 import org.springframework.beans.factory.annotation.Autowired
 import java.util.*
 
 class ProjectAssignmentManagerImpl(@Autowired var projectAssignmentRepository: ProjectAssignmentRepository,
-                                   @Autowired var mapper: ProjectAssignmentMapper) :
+                                   @Autowired var mapper: ProjectAssignmentMapperDto) :
         ProjectAssignmentManager {
     override fun getAllByPerson(personId: UUID): List<ProjectAssignment> = projectAssignmentRepository.findByPersonId(personId) then mapper::toModel
 
