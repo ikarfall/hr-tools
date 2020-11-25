@@ -2,14 +2,16 @@ package com.codecagon.hr.managers
 
 import com.codecagon.hr.managers.interfaces.ProjectManager
 import com.codecagon.hr.models.Project
-import com.codecagon.hr.models.mappers.ProjectMapperDto
+import com.codecagon.hr.models.mappers.ProjectMapper
 import com.codecagon.hr.repositories.interfaces.ProjectRepository
 import com.codecagon.hr.then
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
 import java.util.*
 
+@Component
 class ProjectManagerImpl(@Autowired var repository: ProjectRepository,
-                         @Autowired var mapper: ProjectMapperDto) : ProjectManager {
+                         @Autowired var mapper: ProjectMapper) : ProjectManager {
     override fun getAll(): List<Project> = repository.findAll() then mapper::toModel
 
     override fun getById(id: UUID): Optional<Project> = repository.findById(id).map(mapper::toModel)

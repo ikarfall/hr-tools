@@ -4,8 +4,8 @@ import com.codecagon.hr.models.SalaryAssignment
 import org.mapstruct.Mapper
 import com.codecagon.hr.entities.SalaryAssignment as SalaryAssignmentEntity
 
-@Mapper(componentModel = "spring")
-interface SalaryAssignmentMapperDto {
+@Mapper(componentModel = "spring", implementationName = "SalaryAssignmentDaoMapper")
+interface SalaryAssignmentMapper {
     fun toModel(projectAssignment: SalaryAssignmentEntity): SalaryAssignment
     fun fromModel(projectAssignment: SalaryAssignment): SalaryAssignmentEntity
 

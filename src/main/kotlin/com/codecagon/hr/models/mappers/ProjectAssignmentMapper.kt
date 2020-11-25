@@ -4,8 +4,8 @@ import com.codecagon.hr.models.ProjectAssignment
 import org.mapstruct.Mapper
 import com.codecagon.hr.entities.ProjectAssignment as ProjectAssignmentEntity
 
-@Mapper(componentModel = "spring")
-interface ProjectAssignmentMapperDto {
+@Mapper(componentModel = "spring", implementationName = "ProjectAssignmentDaoMapper")
+interface ProjectAssignmentMapper {
     fun toModel(projectAssignment: ProjectAssignmentEntity): ProjectAssignment
     fun fromModel(projectAssignment: ProjectAssignment): ProjectAssignmentEntity
 

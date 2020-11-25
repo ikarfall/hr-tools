@@ -5,7 +5,7 @@ plugins {
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
     kotlin("jvm") version "1.4.10"
     kotlin("plugin.spring") version "1.4.10"
-    kotlin("kapt") version "1.3.61"
+    kotlin("kapt") version "1.4.10"
 }
 
 group = "com.codecagon"

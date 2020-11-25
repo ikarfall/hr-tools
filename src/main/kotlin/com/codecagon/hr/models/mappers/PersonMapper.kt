@@ -9,8 +9,8 @@ import org.mapstruct.Mappings
 
 import com.codecagon.hr.entities.Person as PersonEntity
 
-@Mapper(componentModel = "spring")
-interface PersonMapperDto {
+@Mapper(componentModel = "spring", implementationName = "PersonDaoMapper")
+interface PersonMapper {
     @Mappings(
             Mapping(source = "projectAssignments", target = "projectAssignments"),
             Mapping(source = "salaryAssignments", target = "salaryAssignments")

@@ -2,22 +2,24 @@ package com.codecagon.hr.managers
 
 import com.codecagon.hr.managers.interfaces.PersonManager
 import com.codecagon.hr.models.Person
-import com.codecagon.hr.models.mappers.PersonMapperDto
-import com.codecagon.hr.models.mappers.ProjectAssignmentMapperDto
-import com.codecagon.hr.models.mappers.SalaryAssignmentMapperDto
+import com.codecagon.hr.models.mappers.PersonMapper
+import com.codecagon.hr.models.mappers.ProjectAssignmentMapper
+import com.codecagon.hr.models.mappers.SalaryAssignmentMapper
 import com.codecagon.hr.repositories.interfaces.PersonRepository
 import com.codecagon.hr.repositories.interfaces.ProjectAssignmentRepository
 import com.codecagon.hr.repositories.interfaces.SalaryAssignmentRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
 import java.util.*
 
+@Component
 class PersonManagerImpl(
         @Autowired var personRepository: PersonRepository,
-        @Autowired var personMapper: PersonMapperDto,
+        @Autowired var personMapper: PersonMapper,
         @Autowired var projectAssignmentRepository: ProjectAssignmentRepository,
-        @Autowired var projectAssignmentMapper: ProjectAssignmentMapperDto,
+        @Autowired var projectAssignmentMapper: ProjectAssignmentMapper,
         @Autowired var salaryAssignmentRepository: SalaryAssignmentRepository,
-        @Autowired var salaryAssignmentMapper: SalaryAssignmentMapperDto
+        @Autowired var salaryAssignmentMapper: SalaryAssignmentMapper
 ) : PersonManager {
     override fun getAll(): List<Person> = personRepository.findAll().map {
         val projectAssignments = projectAssignmentRepository.findByPersonId(it.id)
