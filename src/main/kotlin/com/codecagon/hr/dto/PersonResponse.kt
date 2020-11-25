@@ -8,6 +8,3 @@ class PersonResponse (
         lastname:String,
         projectAssignments: List<ProjectAssignmentResponse> = emptyList(),
         salaryAssignments: List<SalaryAssignmentResponse> = emptyList())
-{
-    // additional metadata, team, department, position
-}

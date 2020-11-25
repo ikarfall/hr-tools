@@ -10,7 +10,7 @@ import org.mapstruct.Mappings
 import com.codecagon.hr.entities.Person as PersonEntity
 
 @Mapper(componentModel = "spring")
-interface PersonMapper {
+interface PersonMapperDto {
     @Mappings(
             Mapping(source = "projectAssignments", target = "projectAssignments"),
             Mapping(source = "salaryAssignments", target = "salaryAssignments")

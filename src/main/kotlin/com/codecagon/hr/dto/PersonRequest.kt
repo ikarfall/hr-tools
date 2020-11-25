@@ -1,10 +1,12 @@
 package com.codecagon.hr.dto
 
-class PersonRequest (
+import java.util.*
+
+class PersonRequest(
+        id: UUID,
         firstName: String,
-        lastname:String,
+        lastname: String,
         projectAssignments: List<ProjectAssignmentRequest> = emptyList(),
-        salaryAssignments: List<SalaryAssignmentRequest> = emptyList())
-{
+        salaryAssignments: List<SalaryAssignmentRequest> = emptyList()) {
     // additional metadata, team, department, position
 }

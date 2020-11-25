@@ -1,4 +1,5 @@
 package com.codecagon.hr.dto
 
-class ProjectResponse {
-}
+import java.util.*
+
+class ProjectResponse(id: UUID, name: String)
