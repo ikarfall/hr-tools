@@ -3,11 +3,10 @@ package com.codecagon.hr.dto
 import java.time.ZonedDateTime
 import java.util.*
 
-class ProjectAssignmentResponse(
+class ProjectAssignmentRaw(
         val start: ZonedDateTime,
         val end: ZonedDateTime,
-        val projectRequest: ProjectResponse,
+        val projectId: UUID,
         val type: AssignmentType,
-        val personId: UUID,
-        val id: UUID)
+        val personId: UUID)
 

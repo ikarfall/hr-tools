@@ -1,16 +1,15 @@
 package com.codecagon.hr.dto.mappers
 
-import com.codecagon.hr.dto.ProjectRequest
-import com.codecagon.hr.dto.ProjectResponse
+import com.codecagon.hr.dto.ProjectRaw
 import com.codecagon.hr.models.Project
 import org.mapstruct.Mapper
 
 @Mapper(componentModel = "spring")
 interface ProjectMapper {
-    fun toResponse(project: Project) : ProjectResponse
-    fun fromRequest(project: ProjectRequest) : Project
+    fun toResponse(project: Project): com.codecagon.hr.dto.Project
+    fun fromRequest(project: ProjectRaw): Project
 
-    fun toResponse(projects: List<Project>) : List<ProjectResponse>
-    fun fromRequest(projects: List<ProjectRequest>) : List<Project>
+    fun toResponse(projects: List<Project>): List<com.codecagon.hr.dto.Project>
+    fun fromRequest(projects: List<ProjectRaw>): List<Project>
 
 }

@@ -3,9 +3,10 @@ package com.codecagon.hr.dto
 import java.time.ZonedDateTime
 import java.util.*
 
-class SalaryAssignmentRequest(
+class SalaryAssignment(
         val start: ZonedDateTime,
         val end: ZonedDateTime,
         val paymentType: PaymentType,
-        val personId: UUID)
+        val personId: UUID,
+        val id: UUID)
 

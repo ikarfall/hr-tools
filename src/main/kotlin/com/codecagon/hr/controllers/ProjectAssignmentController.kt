@@ -1,7 +1,7 @@
 package com.codecagon.hr.controllers
 
-import com.codecagon.hr.dto.ProjectAssignmentRequest
-import com.codecagon.hr.dto.ProjectAssignmentResponse
+import com.codecagon.hr.dto.ProjectAssignment
+import com.codecagon.hr.dto.ProjectAssignmentRaw
 import com.codecagon.hr.dto.mappers.ProjectAssignmentMapper
 import com.codecagon.hr.services.interfaces.ProjectAssignmentService
 import com.codecagon.hr.then
@@ -15,16 +15,16 @@ class ProjectAssignmentController(@Autowired val projectAssignmentService: Proje
                                   @Autowired var projectAssignmentMapper: ProjectAssignmentMapper) {
 
     @GetMapping
-    fun getAllByPerson(@PathVariable id: UUID): List<ProjectAssignmentResponse> = projectAssignmentService.getAllByPerson(id) then (projectAssignmentMapper::toResponse)
+    fun getAllByPerson(@PathVariable id: UUID): List<ProjectAssignment> = projectAssignmentService.getAllByPerson(id) then (projectAssignmentMapper::toResponse)
 
     @PostMapping
-    fun addAssignment(@PathVariable id: UUID, assignment: ProjectAssignmentRequest) = assignment
+    fun addAssignment(@PathVariable id: UUID, assignment: ProjectAssignmentRaw) = assignment
             .let(projectAssignmentMapper::fromRequest)
             .let { projectAssignmentService.addAssignment(id, it) }
             .let(projectAssignmentMapper::toResponse)
 
     @PutMapping
-    fun editAssignment(@PathVariable id: UUID, assignment: ProjectAssignmentRequest) = assignment
+    fun editAssignment(@PathVariable id: UUID, assignment: ProjectAssignmentRaw) = assignment
             .let(projectAssignmentMapper::fromRequest)
             .let { projectAssignmentService.editAssignment(id, it) }
             .let(projectAssignmentMapper::toResponse)
