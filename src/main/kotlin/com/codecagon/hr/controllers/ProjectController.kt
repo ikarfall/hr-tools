@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 import java.util.*
 
 @RestController
-@RequestMapping("projects")
+@RequestMapping("/projects")
 class ProjectController(@Autowired val projectService: ProjectService, @Autowired val projectMapper: ProjectMapper) {
     @GetMapping
     fun getAll(): List<ProjectResponse> = projectService.getAll() then (projectMapper::toResponse)

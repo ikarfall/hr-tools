@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 import java.util.*
 
 @RestController
-@RequestMapping("persons/{id}/project-assignments")
+@RequestMapping("/persons/{id}/project-assignments")
 class ProjectAssignmentController(@Autowired val projectAssignmentService: ProjectAssignmentService,
                                   @Autowired var projectAssignmentMapper: ProjectAssignmentMapper) {
 

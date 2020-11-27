@@ -9,9 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 import java.util.*
 
-
 @RestController
-@RequestMapping("persons")
+@RequestMapping("/persons")
 class PersonController(@Autowired val personService: PersonService, @Autowired val personMapper: PersonMapper) {
     @GetMapping
     fun getAll(): List<PersonResponse> = personService.getAll() then personMapper::toResponse

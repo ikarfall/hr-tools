@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 import java.util.*
 
 @RestController
-@RequestMapping("persons/{id}/salary-assignments")
+@RequestMapping("/persons/{id}/salary-assignments")
 class SalaryAssignmentController(@Autowired val salaryAssignmentService: SalaryAssignmentService,
                                  @Autowired var salaryAssignmentMapper: SalaryAssignmentMapper) {
 

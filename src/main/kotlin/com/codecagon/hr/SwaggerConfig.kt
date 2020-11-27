@@ -15,7 +15,7 @@ class SwaggerConfig {
     fun api(): Docket {
         return Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("net.mestwin.mongodbrestapidemo.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.codecagon.hr.controllers"))
                 .paths(PathSelectors.any())
                 .build()
     }
