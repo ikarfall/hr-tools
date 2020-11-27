@@ -4,9 +4,9 @@ import java.time.ZonedDateTime
 import java.util.*
 
 class SalaryAssignmentResponse(
-        start: ZonedDateTime,
-        end: ZonedDateTime,
-        paymentType: PaymentType,
-        personId: UUID,
-        id: UUID) : Assignment(id, personId, start, end)
+        val start: ZonedDateTime,
+        val end: ZonedDateTime,
+        val paymentType: PaymentType,
+        val personId: UUID,
+        val id: UUID)
 

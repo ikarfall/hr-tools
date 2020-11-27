@@ -4,10 +4,10 @@ import java.time.ZonedDateTime
 import java.util.*
 
 class ProjectAssignmentRequest(
-        start: ZonedDateTime,
-        end: ZonedDateTime,
-        projectRequest: ProjectRequest,
-        type: AssignmentType,
-        personId: UUID,
-        id: UUID) : Assignment(id, personId, start, end)
+        val start: ZonedDateTime,
+        val end: ZonedDateTime,
+        val projectRequest: ProjectRequest,
+        val type: AssignmentType,
+        val personId: UUID,
+        val id: UUID)
 

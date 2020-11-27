@@ -7,6 +7,4 @@ class Person(
         var firstName: String,
         var lastname: String,
         var projectAssignments: List<ProjectAssignment> = emptyList(),
-        var salaryAssignments: List<SalaryAssignment> = emptyList()) {
-    // additional metadata, team, department, position
-}
+        var salaryAssignments: List<SalaryAssignment> = emptyList())

@@ -8,6 +8,4 @@ import java.util.*
 class Person(
         @Id val id: UUID,
         val firstName: String,
-        val lastname: String) {
-    // additional metadata, team, department, position
-}
+        val lastname: String)

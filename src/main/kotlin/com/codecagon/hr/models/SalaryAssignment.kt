@@ -8,5 +8,5 @@ class SalaryAssignment(
         personId: UUID,
         start: ZonedDateTime,
         end: ZonedDateTime,
-        paymentType: PaymentType) : Assignment(id, personId, start, end)
+        val paymentType: PaymentType) : Assignment(id, personId, start, end)
 

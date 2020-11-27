@@ -6,8 +6,8 @@ import java.util.*
 class ProjectAssignment(
         id: UUID,
         personId: UUID,
-        var start: ZonedDateTime,
-        var end: ZonedDateTime,
-        var project: Project,
-        var type: AssignmentType) : Assignment(id, personId, start, end)
+        start: ZonedDateTime,
+        end: ZonedDateTime,
+        val projectId: UUID,
+        val type: AssignmentType) : Assignment(id, personId, start, end)
 
