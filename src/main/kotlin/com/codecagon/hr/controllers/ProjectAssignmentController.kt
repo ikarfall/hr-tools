@@ -4,7 +4,6 @@ import com.codecagon.hr.dto.ProjectAssignment
 import com.codecagon.hr.dto.ProjectAssignmentRaw
 import com.codecagon.hr.dto.mappers.ProjectAssignmentMapper
 import com.codecagon.hr.services.interfaces.ProjectAssignmentService
-import com.codecagon.hr.then
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 import java.util.*
@@ -15,7 +14,8 @@ class ProjectAssignmentController(@Autowired val projectAssignmentService: Proje
                                   @Autowired var projectAssignmentMapper: ProjectAssignmentMapper) {
 
     @GetMapping
-    fun getAllByPerson(@PathVariable id: UUID): List<ProjectAssignment> = projectAssignmentService.getAllByPerson(id) then (projectAssignmentMapper::toResponse)
+    fun getAllByPerson(@PathVariable id: UUID): List<ProjectAssignment> = projectAssignmentService.getAllByPerson(id)
+            .let(projectAssignmentMapper::toResponse)
 
     @PostMapping
     fun addAssignment(@PathVariable id: UUID, @RequestBody assignment: ProjectAssignmentRaw) = assignment

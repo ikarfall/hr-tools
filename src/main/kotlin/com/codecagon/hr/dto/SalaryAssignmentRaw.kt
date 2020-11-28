@@ -7,5 +7,6 @@ class SalaryAssignmentRaw(
         val start: ZonedDateTime,
         val end: ZonedDateTime,
         val paymentType: PaymentType,
+        val amount: Int,
         val personId: UUID)
 

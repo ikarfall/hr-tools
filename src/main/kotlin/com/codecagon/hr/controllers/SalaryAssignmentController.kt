@@ -4,7 +4,6 @@ import com.codecagon.hr.dto.SalaryAssignment
 import com.codecagon.hr.dto.SalaryAssignmentRaw
 import com.codecagon.hr.dto.mappers.SalaryAssignmentMapper
 import com.codecagon.hr.services.interfaces.SalaryAssignmentService
-import com.codecagon.hr.then
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 import java.util.*
@@ -15,7 +14,8 @@ class SalaryAssignmentController(@Autowired val salaryAssignmentService: SalaryA
                                  @Autowired var salaryAssignmentMapper: SalaryAssignmentMapper) {
 
     @GetMapping
-    fun getAllByPerson(@PathVariable id: UUID): List<SalaryAssignment> = salaryAssignmentService.getAllByPerson(id) then (salaryAssignmentMapper::toResponse)
+    fun getAllByPerson(@PathVariable id: UUID): List<SalaryAssignment> = salaryAssignmentService.getAllByPerson(id)
+            .let(salaryAssignmentMapper::toResponse)
 
     @PostMapping
     fun addAssignment(@PathVariable id: UUID, @RequestBody assignment: SalaryAssignmentRaw) = assignment
