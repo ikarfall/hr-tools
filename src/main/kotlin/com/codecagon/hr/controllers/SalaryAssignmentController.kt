@@ -18,14 +18,14 @@ class SalaryAssignmentController(@Autowired val salaryAssignmentService: SalaryA
     fun getAllByPerson(@PathVariable id: UUID): List<SalaryAssignment> = salaryAssignmentService.getAllByPerson(id) then (salaryAssignmentMapper::toResponse)
 
     @PostMapping
-    fun addAssignment(@PathVariable id: UUID, assignment: SalaryAssignmentRaw) = assignment
+    fun addAssignment(@PathVariable id: UUID, @RequestBody assignment: SalaryAssignmentRaw) = assignment
             .let(salaryAssignmentMapper::fromRequest)
             .let { salaryAssignmentService.addAssignment(id, it) }
             .let(salaryAssignmentMapper::toResponse)
 
-    @PutMapping
-    fun editAssignment(@PathVariable id: UUID, assignment: SalaryAssignmentRaw) = assignment
-            .let(salaryAssignmentMapper::fromRequest)
+    @PutMapping("/{assignmentId}")
+    fun editAssignment(@PathVariable id: UUID, @PathVariable assignmentId: UUID, @RequestBody assignment: SalaryAssignmentRaw) = assignment
+            .let { salaryAssignmentMapper.fromRequest(it, assignmentId) }
             .let { salaryAssignmentService.editAssignment(id, it) }
             .let(salaryAssignmentMapper::toResponse)
 

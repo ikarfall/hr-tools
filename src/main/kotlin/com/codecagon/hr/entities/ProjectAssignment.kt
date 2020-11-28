@@ -7,7 +7,7 @@ class ProjectAssignment(
         id: UUID,
         start: ZonedDateTime,
         end: ZonedDateTime,
-        var projectId: UUID,
-        var type: AssignmentType,
-        var personId: UUID) : Assignment(id, personId, start, end)
+        val projectId: UUID,
+        val type: AssignmentType,
+        personId: UUID) : Assignment(id, personId, start, end)
 

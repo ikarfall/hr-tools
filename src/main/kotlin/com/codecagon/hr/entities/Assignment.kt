@@ -6,4 +6,4 @@ import java.time.ZonedDateTime
 import java.util.*
 
 @Document
-open class Assignment(@Id var id: UUID, personId: UUID, start: ZonedDateTime, end: ZonedDateTime)
+open class Assignment(@Id var id: UUID, val personId: UUID, val start: ZonedDateTime, val end: ZonedDateTime)

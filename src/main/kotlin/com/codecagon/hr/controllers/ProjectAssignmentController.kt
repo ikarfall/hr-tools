@@ -18,14 +18,14 @@ class ProjectAssignmentController(@Autowired val projectAssignmentService: Proje
     fun getAllByPerson(@PathVariable id: UUID): List<ProjectAssignment> = projectAssignmentService.getAllByPerson(id) then (projectAssignmentMapper::toResponse)
 
     @PostMapping
-    fun addAssignment(@PathVariable id: UUID, assignment: ProjectAssignmentRaw) = assignment
+    fun addAssignment(@PathVariable id: UUID, @RequestBody assignment: ProjectAssignmentRaw) = assignment
             .let(projectAssignmentMapper::fromRequest)
             .let { projectAssignmentService.addAssignment(id, it) }
             .let(projectAssignmentMapper::toResponse)
 
-    @PutMapping
-    fun editAssignment(@PathVariable id: UUID, assignment: ProjectAssignmentRaw) = assignment
-            .let(projectAssignmentMapper::fromRequest)
+    @PutMapping("/{assignmentId}")
+    fun editAssignment(@PathVariable id: UUID, @PathVariable assignmentId: UUID, @RequestBody assignment: ProjectAssignmentRaw) = assignment
+            .let { projectAssignmentMapper.fromRequest(it, assignmentId) }
             .let { projectAssignmentService.editAssignment(id, it) }
             .let(projectAssignmentMapper::toResponse)
 
