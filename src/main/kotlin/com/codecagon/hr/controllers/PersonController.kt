@@ -15,17 +15,27 @@ class PersonController(@Autowired val personService: PersonService, @Autowired v
     @GetMapping
     fun getAll(): List<Person> = personService.getAll() then personMapper::toResponse
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     fun getById(@PathVariable id: UUID): Optional<Person> =
-            personService.getById(id).map(personMapper::toResponse)
+        personService.getById(id).map(personMapper::toResponse)
 
     @PostMapping
-    fun insert(@RequestBody personRaw: PersonRaw): Person = personMapper.fromRequest(personRaw) then personService::insert then personMapper::toResponse
+    fun insert(@RequestBody person: PersonRaw): Person =
+        personMapper.fromRequest(person) then personService::insert then personMapper::toResponse
+
+    @PostMapping("/bulk")
+    fun insertBulk(@RequestBody persons: List<PersonRaw>): List<Person> = persons
+        .map(personMapper::fromRequest)
+        .map(personService::insert)
+        .map(personMapper::toResponse)
+
 
     @PutMapping
-    fun update(@RequestBody personRaw: PersonRaw): Person = personMapper.fromRequest(personRaw) then personService::update then personMapper::toResponse
+    fun update(@RequestBody personRaw: PersonRaw): Person =
+        personMapper.fromRequest(personRaw) then personService::update then personMapper::toResponse
 
-    @DeleteMapping("{id}")  fun deleteById(@PathVariable id: UUID) = personService.deleteById(id)
+    @DeleteMapping("/{id}")
+    fun deleteById(@PathVariable id: UUID) = personService.deleteById(id)
 }
 
 

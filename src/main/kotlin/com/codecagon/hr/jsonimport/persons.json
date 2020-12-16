@@ -1,0 +1,311 @@
+[
+  {
+    "externalId": "ArlamovskyiId",
+    "firstName": "Andriy",
+    "lastName": "Arlamovskyi",
+    "dob": "1990-05-09",
+    "employedDate": "2020-12-01T15:17:42.066Z",
+    "tags": [
+      {
+        "name": "role",
+        "value": "Senior frontend developer"
+      },
+      {
+        "name": "position",
+        "value": "developer"
+      }
+    ],
+    "relations": [],
+    "projectAssignments": [],
+    "salaryAssignments": []
+  },
+  {
+    "externalId": "KotsiubaId",
+    "firstName": "Hryhorii",
+    "lastName": "Kotsiuba",
+    "dob": "1990-05-09",
+    "employedDate": "2020-12-01T15:17:42.066Z",
+    "tags": [
+      {
+        "name": "role",
+        "value": "Senior frontend developer"
+      },
+      {
+        "name": "position",
+        "value": "developer"
+      }
+    ],
+    "relations": [],
+    "projectAssignments": [],
+    "salaryAssignments": []
+  },
+  {
+    "externalId": "KovbasId",
+    "firstName": "Ivan",
+    "lastName": "Kovbas",
+    "dob": "1990-05-09",
+    "employedDate": "2020-12-01T15:17:42.066Z",
+    "tags": [
+      {
+        "name": "role",
+        "value": "Senior frontend developer"
+      },
+      {
+        "name": "position",
+        "value": "developer"
+      }
+    ],
+    "relations": [],
+    "projectAssignments": [],
+    "salaryAssignments": []
+  },
+  {
+    "externalId": "OsadetsId",
+    "firstName": "Mariia",
+    "lastName": "Osadets",
+    "dob": "1990-05-09",
+    "employedDate": "2020-12-01T15:17:42.066Z",
+    "tags": [
+      {
+        "name": "role",
+        "value": "Senior frontend developer"
+      },
+      {
+        "name": "position",
+        "value": "developer"
+      }
+    ],
+    "relations": [
+      {
+        "id": "ArlamovskyiId",
+        "label": "Liner Manager"
+      },
+      {
+        "id": "KotsiubaId",
+        "label": "function manager"
+      }
+    ],
+    "projectAssignments": [],
+    "salaryAssignments": []
+  },
+  {
+    "externalId": "FedotovId",
+    "firstName": "Oleksandr",
+    "lastName": "Fedotov",
+    "dob": "1990-05-09",
+    "employedDate": "2020-12-01T15:17:42.066Z",
+    "tags": [
+      {
+        "name": "role",
+        "value": "Senior frontend developer"
+      },
+      {
+        "name": "position",
+        "value": "developer"
+      }
+    ],
+    "relations": [],
+    "projectAssignments": [],
+    "salaryAssignments": []
+  },
+  {
+    "externalId": "VovchukId",
+    "firstName": "Oleksandr",
+    "lastName": "Vovchuk",
+    "dob": "1990-05-09",
+    "employedDate": "2020-12-01T15:17:42.066Z",
+    "tags": [
+      {
+        "name": "role",
+        "value": "Senior frontend developer"
+      },
+      {
+        "name": "position",
+        "value": "developer"
+      }
+    ],
+    "relations": [
+      {
+        "id": "ArlamovskyiId",
+        "label": "Liner Manager"
+      },
+      {
+        "id": "KotsiubaId",
+        "label": "function manager"
+      }
+    ],
+    "projectAssignments": [],
+    "salaryAssignments": []
+  },
+  {
+    "externalId": "NamisnykId",
+    "firstName": "Valentyn",
+    "lastName": "Namisnyk",
+    "dob": "1990-05-09",
+    "employedDate": "2020-12-01T15:17:42.066Z",
+    "tags": [
+      {
+        "name": "role",
+        "value": "Senior frontend developer"
+      },
+      {
+        "name": "position",
+        "value": "developer"
+      }
+    ],
+    "relations": [],
+    "projectAssignments": [],
+    "salaryAssignments": []
+  },
+  {
+    "externalId": "SynenkoId",
+    "firstName": "Vasyl",
+    "lastName": "Synenko",
+    "dob": "1990-05-09",
+    "employedDate": "2020-12-01T15:17:42.066Z",
+    "tags": [
+      {
+        "name": "role",
+        "value": "Senior frontend developer"
+      },
+      {
+        "name": "position",
+        "value": "developer"
+      }
+    ],
+    "relations": [
+      {
+        "id": "OsadetsId",
+        "label": "Liner Manager"
+      },
+      {
+        "id": "FedotovId",
+        "label": "Liner Manager"
+      },
+      {
+        "id": "VovchukId",
+        "label": "function manager"
+      }
+    ],
+    "projectAssignments": [],
+    "salaryAssignments": []
+  },
+  {
+    "externalId": "RaykovskyiId",
+    "firstName": "Vladyslav",
+    "lastName": "Raykovskyi",
+    "dob": "1990-05-09",
+    "employedDate": "2020-12-01T15:17:42.066Z",
+    "tags": [
+      {
+        "name": "role",
+        "value": "Senior frontend developer"
+      },
+      {
+        "name": "position",
+        "value": "developer"
+      }
+    ],
+    "relations": [],
+    "projectAssignments": [],
+    "salaryAssignments": []
+  },
+  {
+    "externalId": "RomanchukId",
+    "firstName": "Volodymyr",
+    "lastName": "Romanchuk",
+    "dob": "1990-05-09",
+    "employedDate": "2020-12-01T15:17:42.066Z",
+    "tags": [
+      {
+        "name": "role",
+        "value": "Senior frontend developer"
+      },
+      {
+        "name": "position",
+        "value": "developer"
+      }
+    ],
+    "relations": [],
+    "projectAssignments": [],
+    "salaryAssignments": []
+  },
+  {
+    "externalId": "KosarId",
+    "firstName": "Yana",
+    "lastName": "Kosar",
+    "dob": "1990-05-09",
+    "employedDate": "2020-12-01T15:17:42.066Z",
+    "tags": [
+      {
+        "name": "role",
+        "value": "Senior frontend developer"
+      },
+      {
+        "name": "position",
+        "value": "developer"
+      }
+    ],
+    "relations": [],
+    "projectAssignments": [],
+    "salaryAssignments": []
+  },
+  {
+    "externalId": "MaidanskiyId",
+    "firstName": "Andriy",
+    "lastName": "Maidanskiy",
+    "dob": "1990-05-09",
+    "employedDate": "2020-12-01T15:17:42.066Z",
+    "tags": [
+      {
+        "name": "role",
+        "value": "Senior frontend developer"
+      },
+      {
+        "name": "position",
+        "value": "developer"
+      }
+    ],
+    "relations": [
+      {
+        "id": "incorrectId",
+        "label": "Liner Manager"
+      }
+    ],
+    "projectAssignments": [],
+    "salaryAssignments": []
+  },
+  {
+    "externalId": "HumeniukId",
+    "firstName": "Stanislav",
+    "lastName": "Humeniuk",
+    "dob": "1990-05-09",
+    "employedDate": "2020-12-01T15:17:42.066Z",
+    "tags": [
+      {
+        "name": "role",
+        "value": "Senior frontend developer"
+      },
+      {
+        "name": "position",
+        "value": "developer"
+      }
+    ],
+    "relations": [
+      {
+        "id": "OsadetsId",
+        "label": "Liner Manager"
+      },
+      {
+        "id": "FedotovId",
+        "label": "function manager"
+      },
+      {
+        "id": "VovchukId",
+        "label": "function manager"
+      }
+    ],
+    "projectAssignments": [],
+    "salaryAssignments": []
+  }
+]
