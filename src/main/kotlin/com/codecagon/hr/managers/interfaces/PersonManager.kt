@@ -5,7 +5,7 @@ import java.util.*
 
 interface PersonManager {
     fun getAll(): List<Person>
-    fun getById(id: UUID): Optional<Person>
+    fun getById(id: UUID): Person?
     fun insert(person: Person): Person
     fun updateWithoutAssignments(person: Person): Person
     fun deleteById(id: UUID)

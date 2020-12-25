@@ -1,7 +1,7 @@
 package com.codecagon.hr.jsonimport.dto.mappers
 
 import com.codecagon.hr.jsonimport.dto.ExternalPerson
-import com.codecagon.hr.jsonimport.dto.PersonReference
+import com.codecagon.hr.jsonimport.dto.ExternalPersonReference
 import com.codecagon.hr.models.Person
 import org.mapstruct.Mapper
 import org.springframework.beans.factory.annotation.Autowired
@@ -27,6 +27,7 @@ abstract class PersonMapper {
             knownPersons[it.externalId]?.let { uuid ->
                 Person(
                     uuid,
+                    it.externalId,
                     it.firstName,
                     it.lastName,
                     it.dob,
@@ -37,8 +38,8 @@ abstract class PersonMapper {
                             ?: logRelationImportError(errors, personRef, uuid)
                     },
                     it.employedDate,
-                    projectAssignmentMapper.fromDto(it.projectAssignments),
-                    salaryAssignmentMapper.fromDto(it.salaryAssignments)
+                    unwrapErrors(projectAssignmentMapper.fromDto(it.externalProjectAssignments, uuid), errors),
+                    unwrapErrors(salaryAssignmentMapper.fromDto(it.externalSalaryAssignments, uuid), errors)
                 )
             } ?: logPersonImportError(errors, it)
         } to errors
@@ -46,7 +47,7 @@ abstract class PersonMapper {
 
     private fun logRelationImportError(
         errors: MutableList<String>,
-        personRef: PersonReference,
+        personRef: ExternalPersonReference,
         uuid: UUID?
     ): PersonReferenceModel? = run {
         errors.add("person ${personRef.id} is not found. relation for person $uuid is skipped")
@@ -58,4 +59,13 @@ abstract class PersonMapper {
         errors + "person ${person.externalId} can not be imported"
         null
     }
+}
+
+private fun <T> unwrapErrors(
+    mappingResult: Pair<List<T>, List<String>>,
+    errorsHolder: MutableList<String>
+): List<T> {
+    val (entity, errors) = mappingResult
+    errorsHolder.addAll(errors)
+    return entity
 }

@@ -19,7 +19,7 @@ interface SalaryAssignmentMapper {
     @Mapping(target = "id", expression = "java(java.util.UUID.randomUUID())")
     fun fromRequest(salaryAssignments: List<SalaryAssignmentRaw>): List<SalaryAssignment>
 
-    @Mapping(target = "id", source = "assignmentId")
+    @Mapping(source = "assignmentId", target = "id")
     fun fromRequest(salaryAssignment: SalaryAssignmentRaw, assignmentId: UUID): SalaryAssignment
 
 }

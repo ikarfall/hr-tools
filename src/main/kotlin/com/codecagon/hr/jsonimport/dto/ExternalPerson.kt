@@ -9,8 +9,8 @@ class ExternalPerson(
         val lastName: String,
         var dob: LocalDate,
         val tags: List<Tag> = emptyList(),
-        var relations: List<PersonReference> = emptyList(),
+        var relations: List<ExternalPersonReference> = emptyList(),
         var employedDate: ZonedDateTime,
-        val projectAssignments: List<ProjectAssignmentRaw> = emptyList(),
-        val salaryAssignments: List<SalaryAssignmentRaw> = emptyList()
+        val externalProjectAssignments: List<ExternalProjectAssignment> = emptyList(),
+        val externalSalaryAssignments: List<ExternalSalaryAssignment> = emptyList()
 )

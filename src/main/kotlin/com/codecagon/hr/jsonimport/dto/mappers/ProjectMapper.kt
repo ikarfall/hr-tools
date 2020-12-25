@@ -8,6 +8,6 @@ import java.util.*
 @Mapper(componentModel = "spring", implementationName = "ProjectImportMapper")
 abstract class ProjectMapper {
     fun fromDto(externalProjects: List<ExternalProject>): Pair<List<Project>, List<String>> =
-        externalProjects.map { Project(UUID.randomUUID(), it.name, it.description, it.technologies) } to
+        externalProjects.map { Project(UUID.randomUUID(), it.externalId, it.name, it.description, it.technologies) } to
                 emptyList()
 }

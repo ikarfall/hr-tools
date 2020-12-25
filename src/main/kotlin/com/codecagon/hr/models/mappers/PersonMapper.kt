@@ -15,6 +15,7 @@ interface PersonMapper {
             Mapping(source = "projectAssignments", target = "projectAssignments"),
             Mapping(source = "salaryAssignments", target = "salaryAssignments")
     )
+
     fun toModel(person: PersonEntity,
                 projectAssignments: List<ProjectAssignment>,
                 salaryAssignments: List<SalaryAssignment>): Person

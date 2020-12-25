@@ -14,17 +14,19 @@ class ProjectManagerImpl(@Autowired var repository: ProjectRepository,
                          @Autowired var mapper: ProjectMapper) : ProjectManager {
     override fun getAll(): List<Project> = repository.findAll() then mapper::toModel
 
-    override fun getById(id: UUID): Optional<Project> = repository.findById(id).map(mapper::toModel)
+    override fun getById(id: UUID): Project? = repository.findById(id).map(mapper::toModel).orElse(null)
+    override fun getByExternalId(externalId: String): Project? =
+        repository.getByExternalId(externalId)?.let(mapper::toModel)
 
     override fun insert(project: Project): Project = project
-            .let(mapper::fromModel)
-            .let(repository::save)
-            .let(mapper::toModel)
+        .let(mapper::fromModel)
+        .let(repository::save)
+        .let(mapper::toModel)
 
     override fun update(project: Project): Project = project
-            .let(mapper::fromModel)
-            .let(repository::save)
-            .let(mapper::toModel)
+        .let(mapper::fromModel)
+        .let(repository::save)
+        .let(mapper::toModel)
 
     override fun deleteById(id: UUID) = repository.deleteById(id)
 }

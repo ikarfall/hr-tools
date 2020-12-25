@@ -27,11 +27,11 @@ class PersonManagerImpl(
         personMapper.toModel(it, projectAssignments, salaryAssignments)
     }
 
-    override fun getById(id: UUID): Optional<Person> = personRepository.findById(id).map {
+    override fun getById(id: UUID): Person? = personRepository.findById(id).map {
         val projectAssignments = projectAssignmentRepository.findByPersonId(it.id)
         val salaryAssignments = salaryAssignmentRepository.findByPersonId(it.id)
         personMapper.toModel(it, projectAssignments, salaryAssignments)
-    }
+    }.orElse(null)
 
     override fun insert(person: Person): Person {
         val projectAssignments = person.projectAssignments
@@ -58,7 +58,7 @@ class PersonManagerImpl(
         person
                 .let(personMapper::fromModel)
                 .let(personRepository::save)
-        return this.getById(person.id).orElseThrow { IllegalArgumentException("Person with id ${person.id} in not ") }
+        return this.getById(person.id) ?: throw IllegalArgumentException("Person with id ${person.id} in not ")
 
     }
 

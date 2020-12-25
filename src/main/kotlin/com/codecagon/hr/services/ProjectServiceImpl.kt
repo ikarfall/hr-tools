@@ -11,7 +11,9 @@ import java.util.*
 class ProjectServiceImpl(@Autowired var projectManager: ProjectManager) : ProjectService {
     override fun getAll(): List<Project> = projectManager.getAll()
 
-    override fun getById(id: UUID): Optional<Project> = projectManager.getById(id)
+    override fun getById(id: UUID): Project? = projectManager.getById(id)
+
+    override fun getByExternalId(externalId: String): Project? = projectManager.getByExternalId(externalId)
 
     override fun insert(project: Project): Project = projectManager.insert(project)
 

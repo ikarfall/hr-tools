@@ -16,8 +16,8 @@ class ProjectController(@Autowired val projectService: ProjectService, @Autowire
     fun getAll(): List<Project> = projectService.getAll() then (projectMapper::toResponse)
 
     @GetMapping("{id}")
-    fun getById(@PathVariable id: UUID): Optional<Project> =
-            projectService.getById(id).map(projectMapper::toResponse)
+    fun getById(@PathVariable id: UUID): Project? =
+        projectService.getById(id)?.let(projectMapper::toResponse)
 
     @PostMapping
     fun insert(@RequestBody projectRaw: ProjectRaw): Project = projectMapper.fromRequest(projectRaw) then projectService::insert then projectMapper::toResponse

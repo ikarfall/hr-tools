@@ -6,6 +6,7 @@ import java.util.*
 
 class Person(
     var id: UUID,
+    var externalId: String?,
     var firstName: String,
     var lastname: String,
     var dob: LocalDate,

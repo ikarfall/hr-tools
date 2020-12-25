@@ -16,7 +16,14 @@
       }
     ],
     "relations": [],
-    "projectAssignments": [],
+    "projectAssignments": [
+      {
+        "start": "2019-12-16T11:57:49.598Z",
+        "end": "2020-12-16T11:57:49.598Z",
+        "projectId": "string",
+        "type": "Actual"
+      }
+    ],
     "salaryAssignments": []
   },
   {

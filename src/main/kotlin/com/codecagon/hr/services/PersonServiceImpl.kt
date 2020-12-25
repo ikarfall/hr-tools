@@ -11,7 +11,7 @@ import java.util.*
 class PersonServiceImpl(@Autowired var personManager: PersonManager) : PersonService {
     override fun getAll(): List<Person> = personManager.getAll()
 
-    override fun getById(id: UUID): Optional<Person> = personManager.getById(id)
+    override fun getById(id: UUID): Person? = personManager.getById(id)
 
     override fun insert(person: Person): Person = personManager.insert(person)
 

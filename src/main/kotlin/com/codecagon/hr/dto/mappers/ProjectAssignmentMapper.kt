@@ -19,6 +19,6 @@ interface ProjectAssignmentMapper {
     @Mapping(target = "id", expression = "java(java.util.UUID.randomUUID())")
     fun fromRequest(projectAssignments: List<ProjectAssignmentRaw>): List<ProjectAssignment>
 
-    @Mapping(target = "id", source = "assignmentId")
+    @Mapping(source = "assignmentId", target = "id")
     fun fromRequest(projectAssignment: ProjectAssignmentRaw, assignmentId: UUID): ProjectAssignment
 }

@@ -16,8 +16,8 @@ class PersonController(@Autowired val personService: PersonService, @Autowired v
     fun getAll(): List<Person> = personService.getAll() then personMapper::toResponse
 
     @GetMapping("/{id}")
-    fun getById(@PathVariable id: UUID): Optional<Person> =
-        personService.getById(id).map(personMapper::toResponse)
+    fun getById(@PathVariable id: UUID): Person? =
+        personService.getById(id)?.let(personMapper::toResponse)
 
     @PostMapping
     fun insert(@RequestBody person: PersonRaw): Person =

@@ -3,11 +3,11 @@ package com.codecagon.hr.jsonimport.dto
 import java.time.ZonedDateTime
 import java.util.*
 
-class ProjectAssignmentRaw(
+class ExternalSalaryAssignment(
         val start: ZonedDateTime,
         val end: ZonedDateTime,
-        val projectId: UUID,
-        val type: AssignmentType,
+        val paymentType: PaymentType,
+        val amount: Int,
         val personId: UUID
 )
 
