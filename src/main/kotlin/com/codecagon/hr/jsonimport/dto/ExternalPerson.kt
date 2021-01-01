@@ -11,6 +11,6 @@ class ExternalPerson(
         val tags: List<Tag> = emptyList(),
         var relations: List<ExternalPersonReference> = emptyList(),
         var employedDate: ZonedDateTime,
-        val externalProjectAssignments: List<ExternalProjectAssignment> = emptyList(),
-        val externalSalaryAssignments: List<ExternalSalaryAssignment> = emptyList()
+        val projectAssignments: List<ExternalProjectAssignment> = emptyList(),
+        val salaryAssignments: List<ExternalSalaryAssignment> = emptyList()
 )

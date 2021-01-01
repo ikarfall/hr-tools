@@ -21,6 +21,7 @@ abstract class PersonMapper {
     lateinit var tagMapper: TagMapper
 
     fun fromDto(persons: List<ExternalPerson>): Pair<List<Person>, List<String>> {
+        //add validation in case two persons has same  external Id
         val knownPersons = persons.map { it.externalId to UUID.randomUUID() }.toMap()
         val errors = mutableListOf<String>()
         return persons.mapNotNull {
@@ -38,8 +39,8 @@ abstract class PersonMapper {
                             ?: logRelationImportError(errors, personRef, uuid)
                     },
                     it.employedDate,
-                    unwrapErrors(projectAssignmentMapper.fromDto(it.externalProjectAssignments, uuid), errors),
-                    unwrapErrors(salaryAssignmentMapper.fromDto(it.externalSalaryAssignments, uuid), errors)
+                    unwrapErrors(projectAssignmentMapper.fromDto(it.projectAssignments, uuid), errors),
+                    unwrapErrors(salaryAssignmentMapper.fromDto(it.salaryAssignments, uuid), errors)
                 )
             } ?: logPersonImportError(errors, it)
         } to errors
@@ -55,8 +56,8 @@ abstract class PersonMapper {
     }
 
 
-    private fun logPersonImportError(errors: List<String>, person: ExternalPerson): Person? = run {
-        errors + "person ${person.externalId} can not be imported"
+    private fun logPersonImportError(errors: MutableList<String>, person: ExternalPerson): Person? = run {
+        errors.add("person ${person.externalId} can not be imported")
         null
     }
 }

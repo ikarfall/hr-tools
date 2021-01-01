@@ -9,7 +9,7 @@
       "angular",
       "docker"
     ],
-    "externalId": "someExternalId"
+    "externalId": "Elligo_id"
   },
   {
     "name": "SDLC",
@@ -21,7 +21,7 @@
       "angular",
       "docker"
     ],
-    "externalId": "someExternalId"
+    "externalId": "SDLC_id"
   },
   {
     "name": "Philips",
@@ -33,7 +33,7 @@
       "angular",
       "docker"
     ],
-    "externalId": "someExternalId"
+    "externalId": "Philips_id"
   },
   {
     "name": "Immediate Pay",
@@ -45,7 +45,7 @@
       "angular",
       "docker"
     ],
-    "externalId": "someExternalId"
+    "externalId": "Immediate Pay_id"
   },
   {
     "name": "Acra",
@@ -57,7 +57,7 @@
       "angular",
       "docker"
     ],
-    "externalId": "someExternalId"
+    "externalId": "Acra_id"
   },
   {
     "name": "The Lab",
@@ -69,6 +69,6 @@
       "angular",
       "docker"
     ],
-    "externalId": "someExternalId"
+    "externalId": "The Lab_id"
   }
 ]

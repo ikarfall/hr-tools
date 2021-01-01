@@ -18,13 +18,32 @@
     "relations": [],
     "projectAssignments": [
       {
+        "start": "2020-12-16T11:57:49.598Z",
+        "end": "2021-12-16T11:57:49.598Z",
+        "projectId": "fffff",
+        "type": "Planed"
+      },
+      {
         "start": "2019-12-16T11:57:49.598Z",
         "end": "2020-12-16T11:57:49.598Z",
-        "projectId": "string",
+        "projectId": "Elligo_id",
+        "type": "Actual"
+      },
+      {
+        "start": "2018-12-16T11:57:49.598Z",
+        "end": "2029-11-16T11:57:49.598Z",
+        "projectId": "SDLC_id",
         "type": "Actual"
       }
     ],
-    "salaryAssignments": []
+    "salaryAssignments": [
+      {
+        "start": "2016-12-26T20:53:43.811Z",
+        "end": "2021-12-26T20:53:43.811Z",
+        "paymentType": "Annually",
+        "amount": 1200
+      }
+    ]
   },
   {
     "externalId": "KotsiubaId",
