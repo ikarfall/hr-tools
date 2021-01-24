@@ -6,4 +6,5 @@ import java.util.*
 
 interface ProjectRepository: MongoRepository<Project, UUID> {
     fun getByExternalId(externalId: String): Project?
+    fun findAllByIdIn(ids: List<UUID>): List<Project>
 }

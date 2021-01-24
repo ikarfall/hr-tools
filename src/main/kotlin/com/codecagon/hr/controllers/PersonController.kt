@@ -1,7 +1,9 @@
 package com.codecagon.hr.controllers
 
+import com.codecagon.hr.adapters.interfaces.PersonWithEndingAssignmentsAdapter
 import com.codecagon.hr.dto.Person
 import com.codecagon.hr.dto.PersonRaw
+import com.codecagon.hr.dto.dashbord.PersonWithEndingAssignment
 import com.codecagon.hr.dto.mappers.PersonMapper
 import com.codecagon.hr.services.interfaces.PersonService
 import com.codecagon.hr.then
@@ -11,7 +13,12 @@ import java.util.*
 
 @RestController
 @RequestMapping("/persons")
-class PersonController(@Autowired val personService: PersonService, @Autowired val personMapper: PersonMapper) {
+class PersonController(
+    @Autowired val personService: PersonService,
+    @Autowired val personMapper: PersonMapper,
+    @Autowired val personWithEndingAssignmentsAdapter: PersonWithEndingAssignmentsAdapter
+) {
+
     @GetMapping
     fun getAll(): List<Person> = personService.getAll() then personMapper::toResponse
 
@@ -36,6 +43,12 @@ class PersonController(@Autowired val personService: PersonService, @Autowired v
 
     @DeleteMapping("/{id}")
     fun deleteById(@PathVariable id: UUID) = personService.deleteById(id)
+
+
+    @GetMapping("/with-ending-assignments")
+    fun getPersonsWithEndingAssignment(): List<PersonWithEndingAssignment> {
+        return personWithEndingAssignmentsAdapter.getPersonsWithEndingAssignments()
+    }
 }
 
 

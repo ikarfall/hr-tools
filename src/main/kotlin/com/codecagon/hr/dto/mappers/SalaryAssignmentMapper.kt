@@ -16,7 +16,6 @@ interface SalaryAssignmentMapper {
 
     fun toResponse(salaryAssignments: List<SalaryAssignment>): List<SalaryAssignmentDto>
 
-    @Mapping(target = "id", expression = "java(java.util.UUID.randomUUID())")
     fun fromRequest(salaryAssignments: List<SalaryAssignmentRaw>): List<SalaryAssignment>
 
     @Mapping(source = "assignmentId", target = "id")

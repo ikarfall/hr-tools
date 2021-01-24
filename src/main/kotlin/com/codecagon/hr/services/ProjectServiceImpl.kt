@@ -15,6 +15,8 @@ class ProjectServiceImpl(@Autowired var projectManager: ProjectManager) : Projec
 
     override fun getByExternalId(externalId: String): Project? = projectManager.getByExternalId(externalId)
 
+    override fun findAllByIdIn(ids: List<UUID>): List<Project> = projectManager.findAllByIdIn(ids)
+
     override fun insert(project: Project): Project = projectManager.insert(project)
 
     override fun update(project: Project): Project = projectManager.update(project)

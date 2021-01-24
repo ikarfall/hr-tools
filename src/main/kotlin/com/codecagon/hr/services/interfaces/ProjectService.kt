@@ -11,4 +11,5 @@ interface ProjectService {
     fun update(project: Project): Project
     fun deleteById(id: UUID)
     fun getByExternalId(externalId: String): Project?
+    fun findAllByIdIn(ids: List<UUID>): List<Project>
 }

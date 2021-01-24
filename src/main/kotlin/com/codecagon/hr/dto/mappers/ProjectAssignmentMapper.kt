@@ -9,6 +9,7 @@ import com.codecagon.hr.dto.ProjectAssignment as ProjectAssignmentDto
 
 @Mapper(componentModel = "spring")
 interface ProjectAssignmentMapper {
+
     fun toResponse(projectAssignment: ProjectAssignment): ProjectAssignmentDto
 
     @Mapping(target = "id", expression = "java(java.util.UUID.randomUUID())")
@@ -16,7 +17,6 @@ interface ProjectAssignmentMapper {
 
     fun toResponse(projectAssignments: List<ProjectAssignment>): List<ProjectAssignmentDto>
 
-    @Mapping(target = "id", expression = "java(java.util.UUID.randomUUID())")
     fun fromRequest(projectAssignments: List<ProjectAssignmentRaw>): List<ProjectAssignment>
 
     @Mapping(source = "assignmentId", target = "id")

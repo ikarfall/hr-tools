@@ -18,6 +18,8 @@ class ProjectManagerImpl(@Autowired var repository: ProjectRepository,
     override fun getByExternalId(externalId: String): Project? =
         repository.getByExternalId(externalId)?.let(mapper::toModel)
 
+    override fun findAllByIdIn(ids: List<UUID>): List<Project> = repository.findAllByIdIn(ids) then mapper::toModel
+
     override fun insert(project: Project): Project = project
         .let(mapper::fromModel)
         .let(repository::save)

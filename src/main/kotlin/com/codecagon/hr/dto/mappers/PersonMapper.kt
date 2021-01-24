@@ -7,10 +7,9 @@ import org.mapstruct.Mapping
 import org.mapstruct.Mappings
 import com.codecagon.hr.dto.Person as PersonDto
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = [ProjectAssignmentMapper::class, SalaryAssignmentMapper::class])
 interface PersonMapper {
     fun toResponse(person: Person): PersonDto
-
 
     @Mappings(
         Mapping(target = "id", expression = "java(java.util.UUID.randomUUID())"),
